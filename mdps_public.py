@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -20,13 +18,63 @@ with st.sidebar:
     
     selected = option_menu('Multiple Disease Prediction System',
                           
-                          ['Diabetes Prediction',
+                          [
+                            'Home','Diabetes Prediction',
                            'Heart Disease Prediction',
-                           'Parkinsons Prediction'],
-                          icons=['activity','heart','person'],
+                           'Parkinsons Prediction'
+                           ],
+                          icons=['house','activity','heart','person'],
                           default_index=0)
-    
-    
+#home    
+if (selected == 'Home'):
+
+   st.title("Multiple :red[Disease] Prediction System")
+   st.subheader('Multi Disease Prediction is system based on predictive modeling which predicts the disease of the user on the basis of the symptoms that user provides as an input to the system. ')
+
+   st.write("##")
+   st.write("##")   
+
+   st.subheader('Team Members')
+   original_title = '''<table>
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>UID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>AJAY SINGH</td>
+            <td>20BCS9987</td>
+            </tr>
+            <tr>
+            <td>PRINCE KUMAR</td>
+            <td>20BCS3364</td>
+            </tr>
+            <tr>
+            <td>PRINCE KUMAR SINGH</td>
+            <td>20BCS1058</td>
+            </tr>
+            <tr>
+            <td>SAMEER ANAND</td>
+            <td>20BCS9834</td>
+            </tr>
+            <tr>
+            <td>VAIBHAV SHEKADE</td>
+            <td>20BCS1484</td>
+            </tr>
+        </tbody>
+        </table>'''
+   st.markdown(original_title, unsafe_allow_html=True)
+#    st.write('''
+#             1.) AJAY SINGH - 20BCS9987          
+#             2.) PRINCE KUMAR - 20BCS3364  
+#             3.) PRINCE KUMAR SINGH - 20BCS1058  
+#             4.) SAMEER ANAND - 20BCS9834  
+#             5.) VAIBHAV SHEKADE - 20BCS1484
+  
+#             ''')
+
 # Diabetes Prediction Page
 if (selected == 'Diabetes Prediction'):
     
@@ -74,7 +122,7 @@ if (selected == 'Diabetes Prediction'):
           diab_diagnosis = 'The person is diabetic'
         else:
           diab_diagnosis = 'The person is not diabetic'
-        
+          st.balloons()
     st.success(diab_diagnosis)
 
 
