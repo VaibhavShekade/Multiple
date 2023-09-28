@@ -1,1 +1,1 @@
-# Multiple
+# Multiple-Disease-Prediction-System
